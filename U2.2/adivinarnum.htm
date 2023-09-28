@@ -5,10 +5,12 @@
         <p>Saludo</p>
     </head>
     <body>
-        <p>Escriba su nombre</p>
+        <p id="intentos">Tiene 6 intentos</p>
+        <p id="parrafo"></p>
+        <p>Introduzca un número: </p>
         <div id="contenedor">
-            <input type="text" value="" id="nombre">
+            <input type="number" value="" id="num" min="0" max="100">
         </div>
-        <br><input type="submit" value="SALUDAR" onclick="aleatorio()">
+        <br><input type="submit" value="SALUDAR" onclick="total()">
     </body>
 </html>
