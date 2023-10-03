@@ -1,0 +1,22 @@
+<body> 
+    <script type="text/javascript"> 
+        
+        function calcular(){
+            let num = document.getElementById("num").value;
+            for (let step = 0; step < num; step++) {
+                let total = num - step;
+            document.write('<br>' + total);
+            }
+            for (let step = 0; step < num; step++) {
+            document.write('<br>' + step);
+            }
+            document.write('<br>' + num);
+        }
+    </script> 
+
+    <p>Introduzca un valor: </p>
+    <div id="contenedor1">
+        <input type="number" value="" id="num">
+    </div>
+    <input type="submit" value="SALUDAR" onclick="calcular()">
+</body> 

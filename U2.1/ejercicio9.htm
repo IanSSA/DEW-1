@@ -1,0 +1,26 @@
+<body> 
+    <script type="text/javascript"> 
+        
+        function calcular(){
+            let num = document.getElementById("num").value;
+            let step = 0;
+            while (step < num) {
+                let total = num - step;
+            document.write('<br>' + total);
+                step = step +1;
+            }
+            step = 0;
+            while (step < num) {
+            document.write('<br>' + step);
+            step = step +1;
+            }
+            document.write('<br>' + num);
+        }
+    </script> 
+
+    <p>Introduzca un valor: </p>
+    <div id="contenedor1">
+        <input type="number" value="" id="num">
+    </div>
+    <input type="submit" value="SALUDAR" onclick="calcular()">
+</body> 
