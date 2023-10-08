@@ -2,14 +2,17 @@
     <head>
         <script type="text/javascript" src="saludo.js"></script>
         <link rel="stylesheet" href="saludo.css">
-        <p>Saludo</p>
     </head>
     <body>
-        <p>Escriba su nombre</p>
-        <div id="contenedor">
-            <input type="text" value="" id="nombre">
-            <input type="text" value="Respuesta" id="respuesta" width="100px" disabled>
+        <h3><a href="Index.htm">Volver al indice</a></h3>
+        <div id="div">
+            <h2><p>Escriba su nombre</p></h2>
+            <div>
+                <input type="text" value="" id="nombre"> <br> <br>
+                <input type="text" value="Respuesta" id="respuesta" width="100px" disabled> <br>
+                <br>
+                <button class="boton" role="button" onclick="calcular()">Saludo</button>
+            </div>
         </div>
-        <br><input type="submit" value="SALUDAR" onclick="calcular()">
     </body>
 </html>

@@ -15,7 +15,7 @@ function generar(){
             num = num -1;
         }
     }
-    let respuesta = "Sus numeros son ";
+    let respuesta = "Sus numeros son <br><br>";
 function resultado(num, index){
     if (index == 0){
         respuesta += " " + num;

@@ -2,15 +2,16 @@
     <head>
         <script type="text/javascript" src="adivinarnum.js"></script>
         <link rel="stylesheet" href="adivinarnum.css">
-        <p>Saludo</p>
     </head>
     <body>
-        <p id="intentos">Tiene 6 intentos</p>
-        <p>Introduzca un número: </p>
-        <div id="contenedor">
-            <input type="number" value="" id="num" min="0" max="100">
-            <p id="pista"></p>
+        <h3><a href="Index.htm">Volver al indice</a></h3>
+        <div id="div">
+            <p id="intentos">Tiene 6 intentos</p>
+            <p>Introduzca un número: </p>
+                <input type="number" value="" id="num" min="0" max="100">
+                <p id="pista"></p>
+                <br>
+                <button class="boton" role="button" onclick="total()">Intentar</button>
         </div>
-        <br><input type="submit" value="SALUDAR" onclick="total()">
     </body>
 </html>

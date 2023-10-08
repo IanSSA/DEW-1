@@ -3,12 +3,8 @@ function volver_pagina(){
 }
 
 function mensaje() {
-    document.getElementById("uno").innerHTML = "Prueba";
-    let txt = "";
     if (confirm("Pulsa Aceptar para continuar en la pagina")) {
-      txt = "Usted a decidido quedarse en la pagina";
-      alert("gewgew");
-      document.getElementById("dom").innerHTML = "holaaa";
+      alert("Te quedas en la pagina 2");
     } else {
         try{
             volver_pagina();

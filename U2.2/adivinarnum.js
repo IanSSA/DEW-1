@@ -1,7 +1,6 @@
 let intentos_rest = 6;
 
 let random_num = Math.floor(Math.random() * 100);
-alert(random_num);
 
 function intentos(){
     intentos_rest = intentos_rest - 1;
