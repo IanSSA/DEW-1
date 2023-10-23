@@ -1,7 +1,7 @@
 function addNumbers(){
-    firstNum = 4;
-    secondNum = 8;
-    result = firstNum + secondNum;
+    let firstNum = 4;
+    let secondNum = 8;
+    let result = firstNum + secondNum;
     alert(result);
     return result;
 }

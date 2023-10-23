@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="estilo.css">
+        <title>Factorial recursiva</title>
+        <script type="text/javascript">
+            function factorial () {
+                let total = 1; 
+                let contador = 1;
+                let numero = document.getElementById("respuesta");
+                let resultado = recurse(total,contador,numero);
+            }
+
+            function recurse(total,contador,numero) {
+                total = total * contador;
+
+                if (contador>numero.value){
+                    let resultado = total;
+                    alert( "El resultado es: " + resultado);
+                    return resultado;
+                }
+                else {
+                    contador += 1;
+                    recurse(total,contador,numero);
+                }
+
+            }
+
+            function resultado(){
+                let resultado_final = factorial();
+            }
+
+        </script>
+
+</head>
+
+    <body>
+        <h3><a href="Index.htm">Volver al indice</a></h3>
+        <div id="div">
+            <form action="">
+                <label>factorial: </label>
+                <input type="text" name="respuesta" id="respuesta"/>
+            </form>
+            <button class="mostrar" onclick="resultado()" id="mostrar">calcular</button>
+            <br>
+        </div>
+    </body>
+    </head>
+</html>

@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="estilo.css">
+        <title>Ejercicio 1</title>
+        <script type="text/javascript">
+
+            function referencia() {
+                let numero1 = document.getElementById("respuesta1").value;
+                let numero2 = document.getElementById("respuesta2").value;
+                let numeros = new Object();
+                numeros.PrimerNumero = numero1;
+                numeros.SegundoNumero = numero2;
+                document.getElementById("respuesta2").value= numeros.PrimerNumero;
+                document.getElementById("respuesta1").value=numeros.SegundoNumero;
+            }
+
+            function valor(){
+                let numero1 = document.getElementById("respuesta1").value;
+                let numero2 = document.getElementById("respuesta2").value;
+                document.getElementById("respuesta2").value=numero1;
+                document.getElementById("respuesta1").value=numero2;
+                //label.innerHTML = resultado_final;
+            }
+
+        </script>
+
+</head>
+
+    <body>
+        <form action="">
+            <label>Numero1 : </label>
+            <input type="text" name="respuesta1" id="respuesta1" value=""/>
+            <label>Numero2 : </label>
+            <input type="text" name="respuesta2" id="respuesta2" value=""/>
+        </form>
+        <button class="mostrar" onclick="valor()" id="mostrar">Intercambiar por valor</button>
+        <button class="mostrar" onclick="referencia()" id="mostrar">Intercambiar por referencia</button>
+        <br>
+    </body>
+    </head>
+</html>

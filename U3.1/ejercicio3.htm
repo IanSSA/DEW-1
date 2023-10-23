@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="ejercicio3.js"></script>
+    <link rel="stylesheet" href="ejercicio3.css">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h3><a href="Index.htm">Volver al indice</a></h3>
+    <div id="div">
+        <label for="">En las ventajas del "for" podemos destacar su velocidad
+            y la oprtunidad de usar "break" y "continue", aquí usamos "for" para
+            mostrar todos los elementos del array "ingredientes", pero parando usando break al encontrarnos
+        con el ingrediente "harina"</label> <br>
+       <button onclick="funcionfor()">For</button>
+       <label for="" id="resultadofor"></label> <br> <br>
+       
+       <label for="">El "forEach" es bastante parecido al "for", siendo más sencillo de ejecutar pero
+           sin la capacidad de usar "break" o "continue" aquí usamos "forEach" para
+           mostrar todos los elementos del array "ingredientes"
+       </label> <br> <br>
+       <button onclick="funcionforeach()">ForEach</button>
+       <label for="" id="resultadoforeach"></label> <br> <br>
+   
+       <label for="">El "for in" es especialmente útil cuando queremos sacar o usar el index del array y busca 
+           nuevas propiedades agregadas posteriormente al array, también dispone del uso de "break" y "continue", en este
+           ejemplo diremos en qué posición se encuentra el ingrediente "pescado"
+       </label> <br> <br>
+       <button onclick="funcionforin()">For</button>
+       <label for="" id="resultadoforin"></label> <br> <br>
+   
+       <label for="">El "for of" es bastante similar al "for" pero haciendo mucho más sencilla la sintaxis, aquí 
+        haremos uso del "continue" para que te muestre tods los ingredientes menos "pescado"
+       </label> <br> <br>
+       <button onclick="funcionforof()">For</button>
+       <label for="" id="resultadoforof"></label> <br> <br>
+    </div>
+</body>
+</html>

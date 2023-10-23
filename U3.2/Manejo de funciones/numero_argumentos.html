@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="estilo.css">
+        <title>Suma argumentos por coma</title>
+        <script type="text/javascript">
+
+            function suma() {
+                let numeros = document.getElementById("respuesta").value;
+                let num_separados = numeros.split(",");
+                let suma = 0; 
+                for (i=0; i<num_separados.length; i++) {
+                    suma += parseInt(num_separados[i]);
+                }
+                return suma; 
+            }
+
+            function resultado(){
+                let resultado_final = suma();
+                const label = document.querySelector("#resultado");
+                label.innerHTML = resultado_final;
+            }
+
+        </script>
+
+</head>
+
+    <body>
+        <h3><a href="Index.htm">Volver al indice</a></h3>
+        <div id="div">
+            <form action="">
+                <label>Numeros: </label>
+                <input type="text" name="respuesta" id="respuesta"/>
+            </form>
+            <button class="mostrar" onclick="resultado()" id="mostrar">calcular</button>
+            <br>
+            <label>Resultado: </label>
+            <label id="resultado"></label>
+            <label id="prueba"></label>
+        </div>
+    </body>
+    </head>
+</html>
