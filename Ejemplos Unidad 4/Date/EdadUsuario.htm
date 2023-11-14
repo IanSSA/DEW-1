@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Calcular la edad en años</title>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+var edad_usuario
+
+// Recopilar la fecha de nacimiento dia, mes y año
+var anno_usuario = prompt("Introduzca el año de su nacimiento:", 1950)
+var mes_usuario = prompt("Introduzca el mes de su nacimiento (1 para enero, etc.)", 1)
+var dia_usuario = prompt("Introduzca el dia de su nacimiento:", 1)
+
+// Crear un objeto Date y cambiar su valor
+// con la fecha del cumpleaños del usuario en este año
+var fecha_cumple = new Date()
+fecha_cumple.setMonth(mes_usuario - 1)
+fecha_cumple.setDate(dia_usuario)
+
+// Cargar la fecha actual
+var fecha_actual = new Date()
+var anno_actual = fecha_actual.getFullYear()
+
+if (fecha_actual < fecha_cumple) { 
+    edad_usuario = anno_actual - anno_usuario - 1
+}
+else {
+    edad_usuario = anno_actual - anno_usuario
+}
+
+alert("Ud. tiene " + edad_usuario + " años.")
+
+//-->
+</script>
+
+</head>
+
+<body>
+</body>
+</html>
+

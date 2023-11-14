@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Cálculo de una edad en segundos, minutos, horas, etc.</title>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+// Declarar e inicializar las constantes de los milisegundos
+var UN_SEGUNDO = 1000
+var UN_MINUTO = UN_SEGUNDO * 60
+var UNA_HORA = UN_MINUTO * 60
+var UN_DIA = UNA_HORA * 24
+var UNA_SEMANA = UN_DIA * 7
+
+// Recopilar la fecha de nacimiento: día, mes y año
+var dia_usuario = prompt("Introduzca el día de su nacimiento:", 1)
+var mes_usuario = prompt("Introduzca el mes en el que nació (1 para enero, etc.)",1)
+var anno_usuario = prompt("Indique el año de su nacimiento:", 1950)
+
+// Crear un objeto Date y usar los datos antes solicitados para cambiar la fecha
+var fecha_usuario = new Date()
+fecha_usuario.setFullYear(anno_usuario)
+fecha_usuario.setMonth(mes_usuario - 1)
+fecha_usuario.setDate(dia_usuario)
+
+// Almacenar la fecha y hora actuales
+var fecha_actual = new Date()
+
+// Convertir ambas fechas en milisegundos
+var ms_usuario = fecha_usuario.getTime()
+var ms_actual = fecha_actual.getTime()
+
+// Calcular la edad en varias unidades
+var ms_edad = ms_actual - ms_usuario
+var segundos_edad = Math.round(ms_edad/UN_SEGUNDO)
+var minutos_edad = Math.round(ms_edad/UN_MINUTO)
+var horas_edad = Math.round(ms_edad/UNA_HORA)
+var dias_edad = Math.round(ms_edad/UN_DIA)
+var semanas_edad = Math.round(ms_edad/UNA_SEMANA) 
+
+// Mostrar el mensaje
+alert("Ésta es su edad en diferentes unidades:\n\n" +
+      segundos_edad + " segundos\n" + 
+      minutos_edad + " minutos\n" + 
+      horas_edad + " horas\n" + 
+      dias_edad + " días\n" +
+      semanas_edad + " semanas")
+
+//-->
+</script>
+
+</head>
+
+<body>
+</body>
+</html>
+

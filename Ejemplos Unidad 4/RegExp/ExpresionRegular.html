@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Expresiones regulares</title>
+  <script type="text/javascript">
+    <!--
+    function ValidaTel(formulario) {
+      //expresion regular para telefonos
+      //permite numeros, espacios, + y -
+      var exp_reg_tel = /^[0-9\s\+\-]*$/
+ 
+      //comprobar campo tel de formulario
+      //usa el metodo test de RegExp
+      if(!exp_reg_tel.test(formulario.tel.value)) {
+        alert("TELEFONO no valida")
+        output = FALSE   //no submit
+      } else {
+        alert("TELEFONO valida")
+        output = TRUE    //submit
+      }
+      return output
+    }
+    //-->
+  </script>
+</head>
+
+<body>
+  <form method="post" name="Form1" action="" onSubmit="return ValidaTel(this)">
+    Tel: <input type="text" name="tel" /><br />
+    <input type="submit" name="enviar" value="Enviar" />
+  </form>
+</body>
+
+</html>

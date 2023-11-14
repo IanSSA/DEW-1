@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Redondear con decimales</title>
+</head>
+
+<body>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+function redondeo_decimales(numero, decimales) {
+    var resultado1 = numero * Math.pow(10, decimales)
+    var resultado2 = Math.round(resultado1)
+    var resultado3 = resultado2 / Math.pow(10, decimales)
+    return (resultado3)
+}
+
+document.write(redondeo_decimales(1234.56, 1));
+document.write("<br>");
+document.write(redondeo_decimales(1234.56489, 2));
+
+//-->
+</script>
+
+
+</body>
+</html>
+

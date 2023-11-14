@@ -1,0 +1,91 @@
+<html>
+<head>
+  <title>Fechas</title>
+  <style type="text/css">
+  body {background-color: #a55a5a;}
+  div.marco {position: absolute;
+            left: 100;
+            top: 50;
+            width: 300;
+            background-color: darksalmon;
+            color: white;
+            padding: 8;}
+
+  h1 {background-color: firebrick;
+      color: pink;
+      font-size: large;
+      text-align: center;}
+  </style>
+  <script language="javascript">
+  <!--
+  
+    
+   function Date2(dd,mm,aa)
+     {
+     if (dd!=0 && mm!=0 && aa!=0)
+       {
+       this.setDate(dd);
+       mm--;
+       this.setMonth(mm);
+       this.setFullYear(aa);
+       }
+     } 
+    
+      
+    
+  Date.prototype.Fecha=Date2;
+
+
+  //-->
+  </script>
+
+</head>
+<body>
+<script language="javascript">
+   var dFechaHoy=new Date();
+   document.write("Hoy= "+dFechaHoy+"<br>");
+   document.write("Hoy en local= "+dFechaHoy.toLocaleString()+"<br>");
+   document.write("Hoy en GMT= "+dFechaHoy.toGMTString()+"<br>");
+   var dFecha=new Date("10/11/12");
+   document.write("Fecha='10/11/12' "+dFecha+"<br>");
+   var dFecha=new Date(10,9,12);
+   document.write("Fecha= 10,9,12 "+dFecha+"<br>");
+   var dFecha=new Date("02/30/10 10:10:10");
+   document.write("Fecha= '02/30/10 10:10:10' "+dFecha+"<br>");
+   var dFecha=new Date("10/11/01");
+   document.write("Fecha= '10/11/01' "+dFecha+"<br>");
+   var dFecha=new Date("10/11/2000");
+   document.write("Fecha= '10/11/2000' "+dFecha+"<br>");
+   document.write("getFullYear= "+dFechaHoy.getFullYear()+"<br>");
+   document.write("getYear= "+dFechaHoy.getYear()+"<br>");
+   document.write("getMonth= "+dFechaHoy.getMonth()+"<br>");
+   document.write("getDate= "+dFechaHoy.getDate()+"<br>");
+   document.write("getDay= "+dFechaHoy.getDay()+"<br>");
+   document.write("getHours= "+dFechaHoy.getHours()+"<br>");
+   document.write("getMinutes= "+dFechaHoy.getMinutes()+"<br>");
+   document.write("getSeconds= "+dFechaHoy.getSeconds()+"<br>");
+   document.write("getMilliseconds= "+dFechaHoy.getMilliseconds()+"<br>");
+   document.write("getTime= "+dFechaHoy.getTime()+"<br>");
+   dFecha.setFullYear(2003);
+   document.write("setFullYear(2003)= "+dFecha.toLocaleString()+"<br>");
+   dFecha.setMonth(1);
+   document.write("setMonth(1)= "+dFecha.toLocaleString()+"<br>");
+   dFecha.setDate(1);
+   document.write("setDate(1)= "+dFecha.toLocaleString()+"<br>");
+   dFecha.setHours(1);
+   document.write("setHours(1)= "+dFecha.toLocaleString()+"<br>");
+   dFecha.setMinutes(1);
+   document.write("setMinutes(1)= "+dFecha.toLocaleString()+"<br>");
+   dFecha.setSeconds(1);
+   document.write("setSeconds(1)= "+dFecha.toLocaleString()+"<br>");
+   dFecha.setMilliseconds(1);
+   document.write("setMilliseconds(1)= "+dFecha.toLocaleString()+"<br>");
+   dFecha.setTime(365*24*60*60*1000);
+   document.write("setTime(365*24*60*60*1000)= "+dFecha.toLocaleString()+"<br>");
+   var dFecha=new Date(1912,11,10);
+   document.write("Fecha=1912,11,10 "+dFecha+"<br>");
+   dFecha.Fecha(11,12,1913);
+   document.write("Fecha=11,12,1913 "+dFecha+"<br>");
+</script>
+</body>
+</html>

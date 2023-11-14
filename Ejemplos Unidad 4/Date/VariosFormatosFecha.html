@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Conseguir varios formatos de fecha con Javascript</title>
+</head>
+
+<body>
+
+<h1>Fechas</h1>
+
+
+<p>Esta es la fecha más simple: <i>
+<script>
+var f = new Date();
+document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+</script>
+</i>
+</p>
+
+
+<hr>
+
+<p>Fecha con el nombre del mes: <i>
+<script>
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+var f=new Date();
+document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+</script>
+</i>
+</p>
+
+
+<hr>
+
+
+<p>Fecha más completa: <i>
+<script>
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+var f=new Date();
+document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+</script>
+</i></p>
+
+<p>
+Fecha con estilos: 
+</p>
+
+
+<style type="text/css">
+.mifecha {
+	background-color: #999;
+	padding: 3px;
+	width: 110px;
+	text-align: center;
+	font-family:verdana, arial;
+	font-size: 12pt;
+}
+.mifecha .ano{
+	background-color: #339;
+	padding: 2px;
+	font-size: 100%;
+	margin-bottom: 3px;
+	color: #fff;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+.mifecha .dia{
+	background-color: #99f;
+	font-size: 300%;
+	padding: 5px 8px;
+	margin-bottom: 3px;
+	font-weight: bold;
+}
+.mifecha .mes{
+	background-color: #339;
+	font-size: 80%;
+	padding: 2px;
+	color: #fff;
+	font-weight: bold;
+}
+</style>
+
+<script>
+var f=new Date();
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+document.write('<div class="mifecha">');
+document.write('<div class="ano">' + f.getFullYear() + '</div>');
+document.write('<div class="dia">' + f.getDate() + '</div>');
+document.write('<div class="mes">' + meses[f.getMonth()] + '</div>');
+document.write('</div>');
+</script>
+
+<p>
+Fecha original con casillas para días del mes:
+</p>
+
+<style type="text/css">
+.mifecha2 {
+	border: 1px solid #ddd;
+	padding: 3px;
+	text-align: center;
+	font-family:verdana, arial;
+	font-size: 10pt;
+	overflow: hidden;
+	width: 100%
+}
+.mifecha2 .mesano{
+	float: left;
+	padding: 3px;
+	font-weight: bold;
+}
+.mifecha2 .dia, .mifecha2 .diaactual{
+	width: 20px;
+	padding: 3px;
+	margin-left: 3px;
+	background-color: #ddd;
+	float: left;
+}
+.mifecha2 .diaactual{
+	background-color: #999;
+	font-weight: bold;
+}
+
+</style>
+<script>
+var f=new Date();
+var ano = f.getFullYear();
+var mes = f.getMonth();
+var dia = f.getDate();
+var estiloDia;
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+var diasMes = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+var diaMaximo = diasMes[mes];
+if (mes == 1 && (((ano % 4 == 0) && (ano % 100 != 0)) || (ano % 400 == 0)))
+	diaMaximo = 29;
+document.write('<div class="mifecha2">');
+document.write('<div class="mesano">' + meses[mes] + ' ' + ano + ':</div>');
+
+for (i=1; i<=diaMaximo; i++){
+	if(i == dia)
+		estiloDia = "diaactual";
+	else
+		estiloDia = "dia";
+	document.write('<div class="' + estiloDia + '">' + i + '</div>');
+}	
+document.write('</div>');
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>slice</title>
+    <script type = "text/javascript">
+  
+
+    var star = ["Polaris", "Deneb", "Vega", "Altair"];
+    var Elementostar = star.slice(2,4);   //slice(principio,fin)
+    alert(Elementostar);
+    alert(star.join());
+
+
+    //Con slice no perdemos la cadena original
+    var star = ["Polaris", "Deneb", "Vega", "Altair"];
+    var starcopia = ["Polaris", "Deneb", "Vega", "Altair"];
+    var Elementostar = star.slice(1);
+    alert(Elementostar);
+    alert(star.join());
+    alert(starcopia.join());
+
+    </script>
+</head>
+<body>
+<p>Chapter 8 Example</p>
+</body>
+</html>
