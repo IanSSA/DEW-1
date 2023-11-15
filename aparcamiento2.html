@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Ejercicio 1</title>
+        <style>
+            .ocultar{
+                display: none;
+            }
+            button {
+                position: relative;
+                border-left: 40px;
+                border-top: 40px;
+            }
+        </style>
+        <script type="text/javascript">
+
+            function pasar_a_horas(minutos){
+                let hora = minutos/60;
+                return hora;
+            }
+
+            function pasar_a_minutos(hora){
+                let hora_ = hora.split(":")[0];
+                let minutos = hora.split(":")[1];
+                let horas_a_minutos = parseInt(hora_) * 60;
+                let minutos_total = horas_a_minutos + parseInt(minutos);
+                return minutos_total;
+            }
+
+            function comprobar_dia(tiempo_inicial,tiempo_final,dias){
+                let minutos_inicio = pasar_a_minutos(tiempo_inicial);
+                let horas_inicio = pasar_a_horas(minutos_inicio);
+                let minutos_final = pasar_a_minutos(tiempo_final);
+                let horas_final = pasar_a_horas(minutos_final);
+                if (horas_final >= horas_inicio){
+                    let total = dias;
+                    let inicio = parseInt(tiempo_inicial.split(":")[1]);
+                    let final = parseInt(tiempo_final.split(":")[1]);
+                    return total;
+                    
+                }
+                else{
+
+                    let total = dias - 1;
+                    let inicio = parseInt(tiempo_inicial.split(":")[1]);
+                    let final = parseInt(tiempo_final.split(":")[1]);
+                    return total;
+                }
+            }
+
+            function total_horas_diferencia(){
+                let tiempo_inicial = document.getElementById("tiempo_inicio").value;
+                let tiempo_inical_cortado = tiempo_inicial.split("T")[1];
+                let tiempo_final = document.getElementById("tiempo_final").value;
+                let tiempo_final_cortado = tiempo_final.split("T")[1];
+                horas = diferencia_horas(tiempo_inical_cortado,tiempo_final_cortado);
+                return horas;
+            }
+
+            function calcular_dias(){
+                let tiempo_inicial = document.getElementById("tiempo_inicio").value;
+                let fecha_inicial = tiempo_inicial.split("T")[0];
+                fecha_inicial = new Date(fecha_inicial).getTime();
+                let tiempo_final = document.getElementById("tiempo_final").value;
+                let fecha_final = tiempo_final.split("T")[0];
+                fecha_final = new Date(fecha_final).getTime();
+                let diferencia_fechas = fecha_final - fecha_inicial;
+                diferencia_fechas= parseInt(diferencia_fechas);
+                let diferencia_fechas_en_dias = diferencia_fechas/(1000*60*60*24);
+                return diferencia_fechas_en_dias;
+
+            }
+
+            function diferencia_horas(tiempo_inicial,tiempo_final){
+                let minutos_inicio = pasar_a_minutos(tiempo_inicial);
+                let horas_inicio = pasar_a_horas(minutos_inicio);
+                let minutos_final = pasar_a_minutos(tiempo_final);
+                let horas_final = pasar_a_horas(minutos_final);
+                if (horas_final >= horas_inicio){
+                    hora_redondeada_inicial = Math.floor(parseInt(horas_inicio));
+                    hora_redondeada_final = Math.floor(parseInt(horas_final));
+                    total = hora_redondeada_final - hora_redondeada_inicial;
+                    let inicio = parseInt(tiempo_inicial.split(":")[1]);
+                    let final = parseInt(tiempo_final.split(":")[1]);
+                    if (inicio <= final){
+                        return total;
+                    }
+                    else{
+                        return total - 1;
+                    }
+                    
+                }
+                else{
+                    hora_redondeada_inicial = Math.floor(parseInt(horas_inicio));
+                    hora_redondeada_final = Math.floor(parseInt(horas_final));
+                    total = 24 - hora_redondeada_inicial + hora_redondeada_final;
+                    let inicio = parseInt(tiempo_inicial.split(":")[1]);
+                    let final = parseInt(tiempo_final.split(":")[1]);
+                    if (inicio <= final){
+                        return total;
+                    }
+                    else{
+                        return total - 1;
+                    }
+                }
+            }
+
+       function comprobar_fecha(){
+            let tiempo_inicial = document.getElementById("tiempo_inicio").value;
+            let tiempo_inical_cortado = tiempo_inicial.split("T")[1];
+            let tiempo_final = document.getElementById("tiempo_final").value;
+            let tiempo_final_cortado = tiempo_final.split("T")[1];
+
+        if (tiempo_inicial > tiempo_final){
+                document.write("No puede irse antes de llegar<br>");
+            }
+            else{
+                let horas = diferencia_horas(tiempo_inical_cortado,tiempo_final_cortado);
+                let dias = calcular_dias();
+                let dias_bien = comprobar_dia(tiempo_inical_cortado,tiempo_final_cortado,dias);
+                let precio_dias = dias_bien * 20;
+                if (horas > 1){
+                    horas = horas - 1;
+                    let precio_horas = horas * 1.5;
+                    precio_horas = precio_horas + 1.2;
+                    if (precio_horas > 20){
+                        precio_horas = 20;
+                    }
+                    let precio_total = parseInt(precio_dias) + precio_horas;
+                    const label1 = document.querySelector("#respuesta1");
+                    label1.innerHTML = precio_total;
+                }
+                else {
+                    if (horas == 1){
+                        let precio_horas = 1.2;
+                        let precio_total = parseInt(precio_dias) + precio_horas;
+                        const label1 = document.querySelector("#respuesta1");
+                        label1.innerHTML = precio_total;
+                    }
+                    else{
+                        let precio_horas = 0;
+                        let precio_total = parseInt(precio_dias) + precio_horas;
+                        const label1 = document.querySelector("#respuesta1");
+                        label1.innerHTML = precio_total;
+                    }
+                }
+            }
+
+
+       }
+
+
+
+        </script>
+    </head>
+    <body>
+        <form action="">
+            <label for="inicio_todo">inicio de la estancia</label>
+            <input type="datetime-local" id="tiempo_inicio"><br>
+            <label for="final_todo">final de la estancia</label>
+            <input type="datetime-local" id="tiempo_final">
+        </form>
+        <label id="respuesta1"></label><br>
+        <label id="respuesta2"></label>
+        <button class="mostrar" onclick="comprobar_fecha()" id="mostrar">calcular</button>
+        <a href="" id="link"><img src="" id="imagen"></a>
+    </body>
+</html>
