@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Tratamiento de errores</title>
+</head>
+<body>
+<script language="javascript">
+try 
+  {
+  let z = noexiste+tampocoexiste; // Las variables no están definidas!
+ 
+  } 
+catch(e) 
+  {
+  alert(e.name + " - "+e.message);
+  }
+</script>
+</body>
+</html>

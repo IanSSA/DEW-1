@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Untitled</title>
+	<script language="javascript"> 
+    function compruebaCampo(campo) 
+      {
+	   alert("entro en función comprobar campo ");
+      if(campo.value == "") throw new Error("Campo vacío");
+							//throw "Campo vacío";
+      }
+
+    function compruebaFormulario(formulario) 
+      {
+	  alert("entro en función comprobar formulario");
+      try
+        {
+        for(var i=0;i<formulario.elements.length;i++){
+			alert(formulario.elements.length);
+			alert("entro en for de comprobar formulario ");
+           compruebaCampo(formulario.elements[i]);
+		   }
+		alert("después de for");
+        return true;
+        }   
+      catch(e) 
+        {
+		alert("Entro en catch");
+        alert("Mensaje del error:  " +e.message);
+		alert("Nombre del error:  "+e.name);  
+		alert(e);
+        return false;
+        }
+      finally
+	    {
+    	alert("formulario comprobado");
+        }	
+      }	
+    </script> 
+</head>
+<body>
+    <form name="form1" action="" method="post" onsubmit="return compruebaFormulario(this);">
+    Introduce tu nombre: <input type="text" name="Nombre" /> 
+    <input type="submit" value="Enviar" name="Enviar" />
+    </form>
+</body>
+</html>

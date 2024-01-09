@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>A Ejemplo multinivel</title>
+ 
+</head>
+<body>
+
+<script type = "text/javascript" >
+let inputNum = prompt("Por favor introducir un número entre 50 y 100:");
+
+if (isNaN(inputNum)) {
+    if (inputNum.match(/uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez/)) {
+        alert("Este no es realmente un número para mi.");
+    } else {
+        alert(inputNum + " no es un número.");
+    }
+}
+else if ((inputNum > 50) && (inputNum < 100)) {
+    alert("Este número, " + inputNum + ", está entre 50 y 100.");
+}
+
+</script>
+
+<p>Este es un ejemplo de multinivel</p>
+
+</body>
+</html>

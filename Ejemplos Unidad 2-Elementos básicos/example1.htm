@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hexadecimal Numbers</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type = "text/javascript">
+	/*	
+		let h = 0xe;	
+		alert(h);
+		let i = 0x2;
+		alert(i);
+		let j = h * i;
+		alert(j);
+		alert(typeof(j));
+		
+		 h=0x8;
+		 i=0x2;
+		 j = h * i;
+		alert(j);
+		alert(typeof(j));
+	
+		let c;
+        if (c==null)
+            document.write("c es null y su tipo de dato es "+
+                  typeof(c)+" y su valor es "+ c +"<br />");
+        else	
+            document.write("c: "+c+"<br />"+typeof(c)+"<br />");
+	
+		
+		let Num= prompt("Introduce un numero");
+		alert(Num);
+		alert(typeof(Num));
+	
+		
+		Num1=parseInt(prompt ("Primer numero","")); 	//La string que recoge el prompt la convertimos a entero
+		alert("numero " + Num1);
+		alert(typeof(Num1));
+		
+		alert(typeof(Infinity)); 	//devuelve number
+		alert(typeof(null));		//devuelve object
+		alert(typeof(undefined));	//devuelve undefined
+		
+		alert(null==undefined);		//devuelve true
+		alert(null===undefined);	//devuelve false
+	*/	
+	
+		
+	// Matrices mas abajo en la unidad
+		let temperaturas_medias_ciudad0 = new Array(3) 
+		temperaturas_medias_ciudad0[0] = 12 
+		temperaturas_medias_ciudad0[1] = 10 
+		temperaturas_medias_ciudad0[2] = 11 
+
+		let temperaturas_medias_ciudad1 = new Array (3) 
+		temperaturas_medias_ciudad1[0] = 5 
+		temperaturas_medias_ciudad1[1] = 0 
+		temperaturas_medias_ciudad1[2] = 2 
+
+		let temperaturas_medias_ciudad2 = new Array (3) 
+		temperaturas_medias_ciudad2[0] = 10 
+		temperaturas_medias_ciudad2[1] = 8 
+		temperaturas_medias_ciudad2[2] = 10 
+
+
+		let temperaturas_ciudades = new Array (3) 
+		temperaturas_ciudades[0] = temperaturas_medias_ciudad0 
+		temperaturas_ciudades[1] = temperaturas_medias_ciudad1 
+		temperaturas_ciudades[2] = temperaturas_medias_ciudad2 
+
+		alert(temperaturas_ciudades[0]);
+		alert(temperaturas_medias_ciudad0[2]);
+		alert(temperaturas_ciudades[2]);
+		alert(temperaturas_medias_ciudad0[0]);
+		
+		alert(temperaturas_ciudades[0][2]);  
+		alert(temperaturas_ciudades[2][1]); 
+		
+		
+		let cars=new Array(12);  //Aqui creamos array de longitud 12, 12 elementos
+		alert(cars[0]);			//Muestra undefinied (no es null es una posicion del Array)
+		alert(typeof(cars[0])); //Muestra undefinied
+		
+		alert(typeof(cars));
+		
+		
+		
+		let arrayMuchasDimensiones = [1, ["hola", "que", "tal", ["estas", "estamos", "estoy"], ["bien", "mal"], "acabo"], 2, 5];
+		alert (arrayMuchasDimensiones[0])
+		alert (arrayMuchasDimensiones[1][2])
+		alert (arrayMuchasDimensiones[1][3][1]) 
+		alert(arrayMuchasDimensiones[1,2])  // no da el resultado deseado, NO SIRVE ESTA FORMA
+		
+		let temperaturas_cuidades_otro = new Array(new Array (12,10,11), new Array(5,0,2),new Array(10,8,10)) 
+		alert (temperaturas_cuidades_otro[1][0]);		
+		alert (temperaturas_cuidades_otro[0]);
+		alert (temperaturas_cuidades_otro[1,1]); // no da el resultado deseado, NO SIRVE ESTA FORMA
+
+		let x, y, z, k
+		x=5 + 5; 
+		y="5" + 5; 
+		z="Hello" + 5;
+		k="5" * 5;
+		alert( "x= "+ x+" y= "+ y + " z= "+ z+ " k= "+k);
+		
+		
+		
+	</script>
+</head>
+<body>
+<p>Chapter 4 Example</p>
+</body>
+</html>

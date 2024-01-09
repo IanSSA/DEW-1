@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Divisores primos</title>
+</head>
+
+<body>
+	<h1>Sentencia break [etiqueta]</h1>
+     <script language="javascript">
+       <!--  
+      let numero, es_primo, divisor, i;
+	  // obtenemos un dato y verificamos que es un número
+	  do
+	    {
+		numero=prompt("Dame un número mayor que  1 ...","");
+		}while( isNaN(numero) || (numero<2));
+		document.write("Los divisores primos del " + numero + " son<br>");
+		// obtenemos los divisores
+		for (divisor=1;divisor<=numero;divisor++)
+		  {
+		  bucle_interno:
+		  if (numero % divisor ==0)
+		    {
+    		// calculamos si el divisor encontrado es primo
+		    for (i=2;i<divisor;i++)
+		      {
+			  if (divisor % i == 0)
+			    break bucle_interno;
+			  }
+			document.write("<b>" + divisor +"</b> x ");
+			document.write(numero/divisor + " = " + numero + "<br>");
+			}
+		  }
+       -->
+     </script>
+	
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var txt="";
+function mensaje()
+{
+try
+  {
+  adddlert("Bienvenido!");
+  }
+catch(err)
+  {
+	txt="Se produjo un error en esta página.\n\n";
+	txt+="Mensaje del error: " + err.message + "\n\n";
+  	txt+="Pulse aceptar para continuar.\n\n";
+  	alert(txt);
+	alert("Nombre del error:  "+err.name);
+	//alert("Número del error:  "+ err.number);
+	//alert("Decripción del error:  "+err.description);
+  }
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="Ver mensaje" onclick="mensaje()" />
+</body>
+
+</html>
+

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>ejercicio 2</title>
+	
+
+</head>
+<body>
+	<script language="JavaScript" type="text/javaScript">
+
+		let numero;
+		let entro;
+		
+		numero=prompt("Introduce un número menor que 100");
+alert(numero);
+
+		while (isNaN(numero) || !numero || parseInt(numero)>99) {			
+			entro=0;	
+			if (isNaN(numero)) {
+
+				alert("No es un número");
+				entro=1;
+				
+			} 
+
+			if (!numero) {
+				
+				alert("Error valor no definido");
+				entro=1;
+			} 
+
+			if (entro==0){
+				if (parseInt(numero)>100){
+
+					alert("Mal hecho: El número "+ numero +" es mayor que 100");
+				
+				} else{	
+					alert("Mal hecho: El número introducido es igual a 100, no menor");
+
+					}
+			}	
+				
+
+		numero=prompt("Introduce un número menor que 100");
+alert(numero);
+			
+		}
+
+
+		alert("Muy bien: El número "+ numero +" es menor que 100");
+
+	
+
+	</script>
+
+</body>
+</head>

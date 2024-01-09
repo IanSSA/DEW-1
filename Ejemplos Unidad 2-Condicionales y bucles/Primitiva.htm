@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Primitiva</title>
+  <style type="text/css">
+  body {background-color:#cccccc;}
+
+  h1 {background-color:ddb1bc;
+      color:firebrick;
+      font-size: large;
+      text-align: center;}
+    </style>
+  <script language="javascript">
+	let primitiva=new Array(6);
+	
+	function GenerarNumeros()
+ 	  {
+
+		let i, j, k;
+        let intnumero;
+        let blnrepetido;
+        txtNumeros.value="";
+     
+      for(i=0;i<6;i++)
+        {
+            do
+              {
+                blnrepetido = false;
+                intnumero = Math.floor(Math.random()*49)+1;
+                j = 0;
+                while( (j < i) && (blnrepetido==false))
+                   {
+                    if( primitiva[j] == intnumero)
+                        blnrepetido = true;
+                    j ++;
+                    }
+               }     
+            while(blnrepetido==true);
+            primitiva[i] = intnumero;
+              }
+      for(i=0;i<6;i++)
+    	  txtNumeros.value+=primitiva[i]+"  ";
+      }
+	
+    </script>
+</head>
+
+<body>
+		<h1>&nbsp;Primitiva&nbsp;</h1>
+		<p><input type="button" name="btnGenerarNumeros" value="GENERAR NÚMEROS" onclick="GenerarNumeros()" 
+				   				 style="width:250;"></p>
+		<p><input type="text" name="txtNumeros" size="20"> </p>
+
+</body>
+</html>
